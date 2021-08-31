@@ -30,7 +30,6 @@ while game_is_on:
     time.sleep(speed)
 
     for i in range(len(number_of_cars) - 1):
-
         cars[i].move()
 
     for i in range(len(number_of_cars) - 1):
@@ -41,12 +40,14 @@ while game_is_on:
             game_is_on = False
             level.game_over()
 
-
     if player.ycor() > 250:
         level.point()
         time.sleep(1)
         player.reset_position()
         speed *= 0.5
+        for i in range(len(number_of_cars) - 1):
+            cars[i].reset_position()
+
 
 
 screen.exitonclick()

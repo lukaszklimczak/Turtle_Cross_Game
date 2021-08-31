@@ -4,7 +4,7 @@ import random
 
 Y_POSITIONS = [-200, -100,  0, 100, 200]
 X_POSITIONS = [300, 400, 500, 600, 700, 800]
-# COLORS = ["green", "blue", "red", "black", "orange", "purple"]
+
 
 image = "car.gif"
 image2 = "car2.gif"
@@ -29,8 +29,6 @@ class Car(Turtle):
         self.penup()
         self.shape(car_models[random.randint(0, len(car_models) - 1)])
         self.shapesize(stretch_len=3, stretch_wid=1)
-        # self.move_speed = 0.01
-        # self.color(COLORS[random.randint(0, len(COLORS) - 1)])
         self.goto(X_POSITIONS[random.randint(0, len(X_POSITIONS) - 1)],
                   Y_POSITIONS[random.randint(0, len(Y_POSITIONS) - 1)])
 
@@ -40,4 +38,4 @@ class Car(Turtle):
 
     def reset_position(self):
         y = self.ycor()
-        self.goto(300, y)
+        self.goto(X_POSITIONS[random.randint(0, len(X_POSITIONS) - 1)], y)
