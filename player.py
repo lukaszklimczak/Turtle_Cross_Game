@@ -5,6 +5,7 @@ image = "turtle2.gif"
 screen = Screen()
 screen.addshape(image)
 
+
 class Player(Turtle):
     def __init__(self):
         super().__init__()
